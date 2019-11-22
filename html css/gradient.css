@@ -1,0 +1,34 @@
+
+.main{
+    background-image: url("/image/ganga1.jsp.jpg");
+    height: 500px;
+    background-size: cover;
+   
+}
+p{
+    font-style: initial;
+    font-size: 22px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+input[type ="search"]
+{
+    height: 40px;
+    width: 900px;
+    align-content: center;
+
+}
+h3{
+    text-align: center;
+}
+h1{
+    text-align: center;
+}
+input[type ="button"]
+{
+    height:40px;
+    width:200px;
+    margin-left: 600px;
+    background-color: darkgreen;
+}
