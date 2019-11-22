@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<form action=""  class="col-md-6 offset-3 mb-5 mt-5 card card-body">
+		id:<input name="id" type="text"><br>
+		Name:<input name="empname" type="text"><br>
+		Email:<input name="email" type="email"><br>
+		Password:<input name="password" type="password">
+		<input type="button" name="register" class="button-float-right" Value="register">
+		
+	</form>
+
+
+</body>
+</html>

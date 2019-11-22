@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="">
+		id:<input id="empid" type=""><br> Name:<input
+			name="empname" type="text"><br> sal:<input sal=""
+			type=""><br> gender:<input gender="" type="">
+
+
+	</form>
+</body>
+</html>

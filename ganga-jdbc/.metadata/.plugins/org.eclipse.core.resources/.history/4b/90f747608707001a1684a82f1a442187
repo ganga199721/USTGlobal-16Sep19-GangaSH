@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="">
+		Name:<input name="empname" type="text"><br>
+		Confirm:<input name="confirm" type="text"><br>
+		Confirm:<input type="button" name="confirm"  Value="change">
+
+
+</form>
+</body>
+</html>

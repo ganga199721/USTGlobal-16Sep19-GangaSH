@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<a href="./home" class="float-left">Home</a>
+<a href="./logout" class="float-right">Logout</a>
+<fieldset  aligh="center">
+<legend>Changepassword</legend>
+<form action="./changepassword" method="post">
+		New password:<input name="password" type="password"><br>
+		Confirm password:<input name="confirmpassword" type="password"><br>
+		<input type="reset" value="Reset"><br>
+		<input type="submit" value="change password">
+		
+</fieldset>
+</form>
+</body>
+</html>

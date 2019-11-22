@@ -1,0 +1,33 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<jsp:useBean id="info" class="" scope="request"></jsp:useBean>
+
+<body>
+<a href='./home'>Home</a>
+<a style='float:right' href='./logout'>Logout</a>
+
+<fieldset>
+<legend>Employee Info</legend>
+<table align='centre'>
+		<tr>
+		  <th>info.Id()</th>
+		  <th>info.Name()</th>
+		  <th>info.Email()</th>
+		</tr>
+		
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+
+</body>
+</html>

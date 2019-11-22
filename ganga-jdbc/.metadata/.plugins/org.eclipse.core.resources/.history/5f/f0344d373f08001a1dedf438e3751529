@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='ISO-8859-1'>
+<title>Insert title here</title>
+</head>
+<body>
+	<fieldset aligh='center'>
+		<legend>login</legend>
+
+		<form action='./login' method='post'>
+			id:<input name='id' type='number'><br> 
+			Password:<input name='password' type='password'><br> 
+			<input	type='submit' name='login' class='button-float-right' value='login'><br>
+			<input type='button' name='reset' class='button-float-right' value='reset'><br>
+			<input type='checkbok' name='check' value='checked'>RememberMe
+				<br> <a href='register.html'>Register</a><br>
+		</form>
+
+
+	</fieldset>
+</body>
+</html>

@@ -1,0 +1,4 @@
+14,kavana,30000,F
+15,sharth,20000,M
+16,vindhya,30000,F
+17,nagaraj,20000,M

@@ -1,0 +1,25 @@
+package com.ustglobal.webapp.servlets;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class RedirectServlet extends HttpServlet{
+		@Override
+		protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+			String serach= req.getParameter("search");
+			resp.sendRedirect("https://www.google.com/search?q="+serach);
+			
+			String bing= req.getParameter("bing");
+			resp.sendRedirect("https://www.google.com/bing?q="+bing);
+			
+			String google= req.getParameter("google");
+			resp.sendRedirect("https://www.google.com/google?q="+google);
+			
+			String yahoo= req.getParameter("yahoo");
+			resp.sendRedirect("https://www.google.com/yahoo?q="+yahoo);
+		}
+}

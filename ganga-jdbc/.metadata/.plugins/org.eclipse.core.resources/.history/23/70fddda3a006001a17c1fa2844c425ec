@@ -1,0 +1,13 @@
+package com.ustglobal.webapp.servlets;
+
+
+public class FormForwardServlet extends HttpServlet {
+ private void doPost() {
+	// TODO Auto-generated method stub
+
+}
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/form");
+		
+		dispatcher.forward(req, resp);
+	}
+}

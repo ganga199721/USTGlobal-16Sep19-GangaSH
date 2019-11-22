@@ -1,0 +1,8 @@
+package com.ustglobal.empwebapp.dao;
+
+public class EmployeeDaoJdbcImpl implements EmployeeDAO{
+
+	
+	private final String URL = "jdbc:mysql://localhost:3306/ust_ty_web_db?user=root&password=root";
+	
+}

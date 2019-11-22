@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<fieldset aligh="center">
+<legend>Register</legend>
+
+<form action="./register" method="post">
+		id:<input name="id" type="number"><br>
+		Name:<input name="empname" type="text"><br>
+		Email:<input name="email" type="email"><br>
+		Password:<input name="password" type="password"><br>
+		<input type="submit" class="button-float-right" Value="register"><br>
+		<input type="reset" class="button-float-right" Value="reset">
+	</form>
+
+</fieldset>
+</body>
+</html>

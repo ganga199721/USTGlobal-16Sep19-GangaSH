@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<fieldset aligh="center">
+<legend>search</legend>
+
+<form action="" class="col-md-6 offset-3 mb-5 mt-5 card card-body">
+
+<a herf="home.html" class="float-right">home</a><br>
+<a herf="logout.html" class="float-left">logout</a><br>
+Search:<input name="id" type="number"><br>
+<input type="submit" class="button-float-right" Value="submit"><br>
+
+</form>
+</fieldset>
+</body>
+</html>

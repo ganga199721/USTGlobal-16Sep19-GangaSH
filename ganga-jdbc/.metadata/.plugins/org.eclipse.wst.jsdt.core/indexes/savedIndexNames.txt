@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+F:\ganga-jdbc\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+68377998.index
+2582384556.index
+4030496042.index
+625666234.index
+287702027.index
+3455853336.index
+1304082621.index
