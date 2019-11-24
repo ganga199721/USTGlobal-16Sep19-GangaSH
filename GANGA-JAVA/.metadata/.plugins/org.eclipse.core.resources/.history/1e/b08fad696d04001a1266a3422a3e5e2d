@@ -1,0 +1,5 @@
+package com.ustglobal.threads.pausing;
+
+public class Counter {
+
+}

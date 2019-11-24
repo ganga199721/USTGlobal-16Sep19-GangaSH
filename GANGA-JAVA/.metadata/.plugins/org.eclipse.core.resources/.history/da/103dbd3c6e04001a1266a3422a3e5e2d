@@ -1,0 +1,16 @@
+package com.ustglobal.threads.pausing;
+
+public class CouterTest {
+public static void main(String[] args) {
+	
+	Counter c = new Couter();
+	Runnable r1 = () ->{
+		c.increment();
+		c.decrement();
+	};
+	Runnable r2 = () ->{
+		c.decrement();
+		c.showValue();
+	}
+}
+}

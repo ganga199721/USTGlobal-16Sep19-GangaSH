@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.ustglobal.collection.ArrayList&apos; to &apos;Array&apos;&#x0D;&#x0A;- Original project: &apos;collection&apos;&#x0D;&#x0A;- Original element: &apos;com.ustglobal.collection.ArrayList&apos;&#x0D;&#x0A;- Renamed element: &apos;com.ustglobal.collection.Array&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;ArrayList&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.ustglobal.collection{ArrayList.java[ArrayList" matchStrategy="1" name="Array" qualified="false" references="true" similarDeclarations="false" stamp="1572605189894" textual="false" version="1.0"/>
+</session>
