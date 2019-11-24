@@ -1,0 +1,5 @@
+package com.ustglobal.jpawithhibernet.onttomany;
+
+public class person {
+
+}

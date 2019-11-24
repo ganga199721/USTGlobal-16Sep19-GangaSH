@@ -1,0 +1,5 @@
+package com.ustglobal.myfirstproject.dto;
+
+public class ExecuteDeleteQuery {
+
+}

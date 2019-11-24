@@ -1,0 +1,11 @@
+package com.ustglobal.jpawithhibernetapp;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
+
+public class ReadDemo {
+public static void main(String[] args) {
+	EntityManager entityManager =entityManagerFactory.createEntityManager();
+	EntityTransaction entityTransaction=entityManager.getTransaction();
+}
+}

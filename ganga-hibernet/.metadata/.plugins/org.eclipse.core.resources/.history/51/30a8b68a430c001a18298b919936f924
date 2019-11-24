@@ -1,0 +1,7 @@
+package com.ustglobal.jpawithhibernetapp.jpql;
+
+public class RetriveData {
+	public static void main(String[] args) {
+
+	}
+}

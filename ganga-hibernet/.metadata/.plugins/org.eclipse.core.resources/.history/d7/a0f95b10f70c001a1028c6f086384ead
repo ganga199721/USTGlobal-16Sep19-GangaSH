@@ -1,0 +1,7 @@
+package com.ustglobal.jpawithhibernet.onetomany;
+
+public class Pencil {
+
+	private int pid;
+	private String color;
+}

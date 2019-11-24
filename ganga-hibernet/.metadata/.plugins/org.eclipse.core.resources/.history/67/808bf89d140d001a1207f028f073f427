@@ -1,0 +1,5 @@
+package com.ustglobal.jpawithhibernet.manytomany;
+
+public class Student {
+
+}

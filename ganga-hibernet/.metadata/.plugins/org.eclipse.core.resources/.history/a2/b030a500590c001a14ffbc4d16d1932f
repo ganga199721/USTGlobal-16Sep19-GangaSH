@@ -1,0 +1,13 @@
+package com.ustglobal.jpawithhibernetapp.onetoone;
+
+
+
+import lombok.Data;
+@Data
+public class VoterCard {
+
+
+private int vid;
+
+private String vname;
+}

@@ -1,0 +1,29 @@
+package com.ustglobal.jpawithhibernetapp.jpql;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
+
+import com.ustglobal.jpawithhibernetapp.dto.ProductInfo;
+
+public class Read {
+public static void main(String[] args) {
+
+		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("TestPersistence" );
+		EntityManager  entityManager =entityManagerFactory.createEntityManager();
+		String jpql="select Pname from productInfo";
+	
+		Query query =	entityManager.createQuery(jpql);
+		query.getResultList();
+		
+		List<String> productInfos = query.getResultList();
+		for(String productInfo :productInfos) {
+			System.out.println(productInfo.getPname());
+		}
+		entityManager.close();
+		
+	}
+}

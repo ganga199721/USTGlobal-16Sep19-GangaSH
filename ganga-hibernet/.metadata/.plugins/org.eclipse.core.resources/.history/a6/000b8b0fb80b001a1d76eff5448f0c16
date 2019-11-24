@@ -1,0 +1,40 @@
+package com.ustglobal.myfirstproject.dto;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
+
+import com.ustglobal.jpawithhibernetapp.dto.InsertData;
+
+public class InsertData {
+	EntityTransaction entityTransaction=null;
+	EntityManager entityManager=null;
+	
+	InsertData insert=new InsertData();
+	insert.setPid(10);
+	insert.setPname("pen");
+	insert.setQuantity(101);
+	try {
+	EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("TestPersistence" );
+	
+	entityManager =entityManagerFactory.createEntityManager();
+	
+	//EntityManager entityManager =entityManagerFactory.createEntityManager();
+	//EntityTransaction entityTransaction=entityManager.getTransaction();
+	
+	entityTransaction = entityManager.getTransaction();
+	entityTransaction.begin();
+	ProductInfo productInfo1=entityManager.find(ProductInfo.class, 101);
+	entityManager.persist(productInfo1);
+	System.out.println("Record saved");
+	entityTransaction.commit();
+	}catch(Exception e){
+		e.printStackTrace();
+	//entityManager.clear();
+		entityTransaction.rollback();
+}
+}
+
+	
+}

@@ -1,0 +1,5 @@
+ckage com.ustglobal.myfirstproject.dto;
+
+public class ExecuteInsertQuery {
+
+}

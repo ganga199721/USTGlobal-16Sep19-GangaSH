@@ -1,0 +1,19 @@
+package com.ustglobal.jpawithhibernet.onetomany;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import lombok.Data;
+
+@Data
+@Entity
+@Table(name="PencilBox")
+public class PencilBox {
+	@Id
+	@Column
+	private int bid;
+	@Column
+	private String bname;
+}

@@ -1,0 +1,5 @@
+package com.ustglobal.jpawithhibernetapp.jpql;
+
+public class DynamicUpdate {
+
+}

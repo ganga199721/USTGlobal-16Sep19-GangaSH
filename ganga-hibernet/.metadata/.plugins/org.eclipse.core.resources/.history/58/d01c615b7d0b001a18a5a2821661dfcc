@@ -1,0 +1,14 @@
+package com.ustglobal.jpawithhibernetapp;
+
+import com.ustglobal.jpawithhibernetapp.dto.ProductInfo;
+
+public class InsertDemo {
+ public static void main(String[] args) {
+	ProductInfo productInfo=new ProductInfo();
+	productInfo.setPid(101);
+	productInfo.setPname("ganga");
+	productInfo.setQuantity(101\);
+	
+	
+}
+}

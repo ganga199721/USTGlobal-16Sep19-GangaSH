@@ -1,0 +1,19 @@
+package com.ustglobal.jpawithhibernetapp.jpql;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
+
+public class Update {
+public static void main(String[] args) {
+	
+	EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("TestPersistence" );
+	EntityManager  entityManager =entityManagerFactory.createEntityManager();
+	
+	String jpql = "Update productInfo set pname='watch" where pod=20;
+	Query query = entityManager.createQuery(jql);
+	int result = query.executeUpdate();
+	System.out.println(result);
+}
+}
