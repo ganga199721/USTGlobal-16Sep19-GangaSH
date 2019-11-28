@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <Script>
+        function fact(num){
+            var fact=1
+            for(i=1;i<=num;i++){
+                fact*=i;
+            }
+        }
+            console.log(fact(5))
+    </Script>
+
+    <Script>
+        var fact = function(num){
+            var fact=1
+            for(i=1;i<=num;i++){
+                fact*=i
+            }
+            return fact
+        }
+        console.log(fact(4))
+    </Script>
+
+    <Script>
+        (function(num){
+            var fact=1
+            for(i=1;i<=num;i++){
+                fact*=i
+            }
+            console.log(fact)
+            })
+    
+    
+    
+    
+    </Script>
+</body>
+</html>
