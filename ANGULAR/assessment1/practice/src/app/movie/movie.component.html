@@ -1,0 +1,8 @@
+<input type="search" name="" id="" class="form-control col-md-6 offset-3 mt-5" (keyup)="getMovie($event)">
+
+    <div class="col col-md-4 card card-body  float-left " *ngFor="let movie of movies">
+      <h1> {{movie.Title}}</h1> 
+<img src="{{movie.Poster}}" alt="">
+    </div>
+
+

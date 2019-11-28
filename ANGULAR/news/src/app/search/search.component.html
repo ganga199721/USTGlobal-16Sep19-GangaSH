@@ -1,0 +1,12 @@
+<div _ngcontent-pbe-c6="" class="col-md-4 offset-md-4">
+    <div _ngcontent-pbe-c6="" class="input-group">
+        <div _ngcontent-pbe-c6="" class="input-group-prepend">
+            <span _ngcontent-pbe-c6="" class="input-group-text">Search</span>
+        </div><input (input)="search($event)" class="form-control ng-untouched ng-pristine ng-valid" type="search">
+    </div>
+</div>
+<div class=" col-md-3 float-left card card-body" style="height:350px"  *ngFor="let new of news">
+        <img src="{{new.urlToImage}}"  style="height:250px"  alt="" >
+        <h6>{{new.title}}</h6>
+    
+</div>

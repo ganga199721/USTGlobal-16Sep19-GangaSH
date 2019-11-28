@@ -1,0 +1,19 @@
+<div  class="col-md-4 offset-md-4">
+        <select class="form-control"  (change)="getCountryNews($event)" >
+        <option  value="bbc-news">BBC News</option>
+        <option  value="the-times-of-india" selected>Times of India</option>
+        <option  value="fox-news">Fox News</option>
+        <option  value="espn">ESPN</option>
+        <option  value="news24">News24</option>
+        <option  value="the-hindu">The Hindu</option>
+        <option  value="usa-today">USA Today</option>
+        <option  value="national-geographic">National Geographic</option>
+        <option  value="mirror">Mirror</option>
+    </select>
+    </div>
+    <div class=" col-md-3 float-left card card-body" style="height:350px"  *ngFor="let new of news">
+      <a href="{{new.url}}">
+        <img src="{{new.urlToImage}}" class="card-img-top"  style="height:250px"  alt="" >
+        <h6>{{new.title}}</h6>
+    </a>
+    </div>

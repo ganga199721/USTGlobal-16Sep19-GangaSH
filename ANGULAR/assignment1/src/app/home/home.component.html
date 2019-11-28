@@ -1,0 +1,13 @@
+<div _ngcontent-uqf-c3="" class="col-md-4 offset-md-4">
+    <select class="form-control"  (change)="getCountryNews($event.target.value)" >
+    <option  value="in">India</option>
+    <option  value="us">United States</option>
+    <option  value="ua">Dubai</option>
+    <option  value="ru">Russia</option>
+</select>
+</div>
+<div class=" col-md-3 float-left card card-body" style="height:350px"  *ngFor="let new of news">
+    <img src="{{new.urlToImage}}"  style="height:250px"  alt="" >
+    <h6>{{new.title}}</h6>
+
+</div>

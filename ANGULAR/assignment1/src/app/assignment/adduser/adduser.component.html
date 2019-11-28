@@ -1,0 +1,78 @@
+<form action="" class="col-md-4 offset-4 mt-5 mb-5 card card-body" #form="ngForm"  (ngSubmit)="loginData(form)">
+    <h3 class="text-center bg-dark text-white">Enter user Details</h3>
+    
+    <div class="form-group">
+        <input type="text" name="userName" id="userName" class="form-control" placeholder="Enter user name..." #userName="ngModel" ngModel required>
+        <div *ngIf="userName.touched && userName.invalid">
+            <p *ngIf="userName.errors.required" class="alert alert-danger"> *User name Name is required</p>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <input type="number" name="age" id="age" class="form-control" placeholder="Enter age" #age="ngModel" ngModel required>
+        <div *ngIf="age.touched && age.invalid">
+            <p *ngIf="age.errors.required" class="alert alert-danger">* age field is required</p>
+  
+        </div>
+    </div>
+
+    Gender
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="gender" id="exampleRadios1" value="option1" #skill="ngModel" ngModel required >
+        <label class="form-check-label" for="exampleRadios1">
+        Male
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="gender" id="exampleRadios2" value="option2" #skill="ngModel" ngModel required  >
+        <label class="form-check-label" for="exampleRadios2">
+       Female
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="gender" id="exampleRadios3" value="option3" #skill="ngModel" ngModel required >
+        <label class="form-check-label" for="exampleRadios3">
+        Other
+        </label>
+      </div>
+
+      <div class="form-group">
+        <input type="email" name="email" id="emails" class="form-control" placeholder="Enter email..." #email="ngModel" ngModel required>
+        <div *ngIf="email.touched && email.invalid">
+            <p *ngIf="email.errors.required" class="alert alert-danger"> *This field is required</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <input type="tel" name="contact" id="contact" class="form-control" placeholder="Enter contact..." #contact="ngModel" ngModel required>
+        <div *ngIf="contact.touched && contact.invalid">
+            <p *ngIf="contact.errors.required" class="alert alert-danger"> *Contact field is required</p>
+        </div>
+    </div>
+
+   
+
+
+
+    <div class="form-group">
+        <input type="password" name="password" id="password" class="form-control" placeholder="Enter password name..." #password="ngModel" ngModel required>
+        <div *ngIf="password.touched && password.invalid">
+            <p *ngIf="password.errors.required" class="alert alert-danger"> *passwordis required</p>
+        </div>
+         
+    </div>
+    <div class="form-group">
+        <input type="cpassword" name="cpassword" id="cpassword" class="form-control" placeholder="Confirm password..." #cpassword="ngModel" ngModel required>
+        <div *ngIf="cpassword.touched && cpassword.invalid">
+            <p *ngIf="cpassword.errors.required" class="alert alert-danger"> *confirm is required</p>
+        </div>
+        <div *ngIf=" cpassword.touched && password.value != cpassword.value">
+            <p *ngIf="cpassword.errors.required" class="alert alert-danger"> *password dosent match</p>
+        </div>
+    </div>
+
+<!-- EXTRAA -->
+    <div class="form-group">
+        <button type="submit" class="btn btn-outline-success float-right" [disabled]="form.invalid">Add user</button>
+    </div>
+    </form>

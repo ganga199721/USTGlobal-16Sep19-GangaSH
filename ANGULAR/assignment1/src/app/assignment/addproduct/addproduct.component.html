@@ -1,0 +1,39 @@
+<form action="" class="col-md-4 offset-4 mt-5 card card-body" #form="ngForm"  (ngSubmit)="loginData(form)">
+    <h1 class="text-center bg-dark text-white">Enter Product Details</h1>
+    
+    <div class="form-group">
+        <input type="text" name="productName" id="productName" class="form-control" placeholder="Enter product name..." #productName="ngModel" ngModel required>
+        <div *ngIf="productName.touched && productName.invalid">
+            <p *ngIf="productName.errors.required" class="alert alert-danger"> *Product Name  is required</p>
+        </div>
+    </div>
+    
+
+    <div class="form-group">
+        <input type="number" name="price" id="price" class="form-control" placeholder="Enter productprice" #price="ngModel" ngModel required>
+        <div *ngIf="price.touched && price.invalid">
+            <p *ngIf="price.errors.required" class="alert alert-danger">* Product price</p>
+  
+        </div>
+    </div>
+
+    <div class="form-group">
+        <textarea name="description" id="description" class="form-control" placeholder="Enter product description" #description="ngModel" ngModel required></textarea>
+        <div *ngIf="description.touched && description.invalid">
+            <p *ngIf="description.errors.required" class="alert alert-danger">* ENter product description</p>
+  
+        </div>
+    </div>
+   
+
+    <div class="form-group">
+        <input type="text"  name="imageurl" id="imageurl" class="form-control" placeholder="Enter product imageurl" #imageurl="ngModel" ngModel required>
+        <div *ngIf="imageurl.touched && imageurl.invalid">
+            <p *ngIf="imageurl.errors.required" class="alert alert-danger">* ENter product imageurl</p>
+  
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-outline-success float-right" [disabled]="form.invalid">Register</button>
+    </div>
+    </form>

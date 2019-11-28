@@ -1,0 +1,76 @@
+<form action="" class="col-md-4 offset-4 mt-5 card card-body" #form="ngForm"  (ngSubmit)="addCandidate(form)">
+    <h2 class="text-center bg-dark text-white">Enter candidate Details</h2>
+    
+    <div class="form-group">
+        <input type="text" name="candidateName" id="candidateName" class="form-control" placeholder="Enter candidate name..." #candidateName="ngModel" ngModel required>
+        <div *ngIf="candidateName.touched && candidateName.invalid">
+            <p *ngIf="candidateName.errors.required" class="alert alert-danger"> *Candidate Name is required</p>
+        </div>
+    </div>
+    
+    
+   
+    
+
+    <div class="form-group">
+        <input type="number" name="experience" id="experience" class="form-control" placeholder="Enter year of experience" #experience="ngModel" ngModel required>
+        <div *ngIf="experience.touched && experience.invalid">
+            <p *ngIf="experience.errors.required" class="alert alert-danger">* Year of experience</p>
+  
+        </div>
+    </div>
+
+   
+<label class="form-check-label" ><h6>Skills</h6></label>
+    <div class="form-check">
+            
+        <input class="form-check-input" type="radio" name="skill" id="exampleRadios1" value="option1" #skill="ngModel" ngModel required >
+        <label class="form-check-label" for="exampleRadios1">
+         ANgular
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="skill" id="exampleRadios2" value="option2" #skill="ngModel" ngModel required  >
+        <label class="form-check-label" for="exampleRadios2">
+         Sql
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="skill" id="exampleRadios3" value="option3" #skill="ngModel" ngModel required >
+        <label class="form-check-label" for="exampleRadios3">
+          Java
+        </label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="skill" id="exampleRadios4" value="option4" #skill="ngModel" ngModel required >
+        <label class="form-check-label" for="exampleRadios4">
+          Java
+        </label>
+      </div>
+      <div class="form-group">
+              <div *ngIf="skill.touched &&  skill.invalid">
+            <p *ngIf="skill.errors.required" class="alert alert-danger">* Enter skill</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <input type="text" name="mctc" id="mctc" class="form-control" placeholder="Enter year of mctc" #mctc="ngModel" ngModel required>
+        <div *ngIf="mctc.touched && mctc.invalid">
+            <p *ngIf="mctc.errors.required" class="alert alert-danger">* Year of mctc</p>
+  
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="text" name="relocate" id="relocate" class="form-control" placeholder="Enter candidate name..." #relocate="ngModel" ngModel required>
+        <div *ngIf="relocate.touched && relocate.invalid">
+            <p *ngIf="relocate.errors.required" class="alert alert-danger"> *Ready to relocate</p>
+        </div>
+    </div>
+
+  
+    <div class="form-group">
+        <button type="submit" class="btn btn-outline-success float-right" [disabled]="form.invalid">Add details</button>
+    </div>
+    </form>
+

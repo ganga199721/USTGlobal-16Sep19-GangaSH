@@ -1,0 +1,38 @@
+<div class="col-md-4 offset-4 mt-4 mb-5 card card-body">
+        <form action="" [formGroup]="form" (ngSubmit)="ADDMovie(form)">
+            <h1 class="text-center text-white ">AddMOVIE</h1>
+            <div class="form-group">
+                <input type="text" name="movie" id="movie" class="form-control" placeholder="Add movie" formControlName='movie'>
+                <div *ngIf='movie.touched && movie.invalid'>
+                   <p *ngIf="movie.errors.required" class="text-danger">This field is required</p> 
+                   
+                </div>
+            </div>
+            <div class="form-group">
+                    <input type="text" name="title" id="title" class="form-control" placeholder="Add title" formControlName='title'>
+                    <div *ngIf='title.touched && title.invalid'>
+                       <p *ngIf="title.errors.required" class="text-danger">Title is required</p> 
+                       
+                    </div>
+                </div>
+                <div class="form-group">
+                        <input type="text" name="url" id="url" class="form-control" placeholder="Add url" formControlName='url'>
+                        <div *ngIf='url.touched && url.invalid'>
+                           <p *ngIf="url.errors.required" class="text-danger">IMAGE url is required</p> 
+                        </div>
+                    </div>
+                    <div class="form-group">
+                            <textarea name="desc" id="desc" class="form-control" placeholder="Add Description" formControlName='desc'></textarea>
+                            <div *ngIf='desc.touched && desc.invalid'>
+                               <p *ngIf="desc.errors.required" class="text-danger">Description is required</p> 
+                            </div>
+                        </div>
+    
+           
+            <div class="form-group">
+                <button type="submit" class="btn btn-outline-success float-right" [disabled]='form.invalid'>
+                    Login
+                </button>
+            </div>
+        </form>
+    </div>
