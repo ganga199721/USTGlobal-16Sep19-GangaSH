@@ -46,10 +46,6 @@ public class ProductController {
 		}
 	}//end of login()
 	
-	
-	
-	
-	
 	@GetMapping("/register")
 	public String registerPage() {
 		return "register";

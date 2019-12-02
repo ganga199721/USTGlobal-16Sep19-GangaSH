@@ -32,13 +32,10 @@ public class ProductServiceImpl implements ProductService {
 		return dao.searchProduct(id);
 	}
 
-	
 	@Override
 	public boolean changePassword(int id, String password) {
 		return dao.changePassword(id, password);
-	
 	}
-
 }
 	
 

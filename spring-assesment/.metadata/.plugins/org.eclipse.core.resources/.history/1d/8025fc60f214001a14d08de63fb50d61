@@ -1,0 +1,42 @@
+package com.ustglobal.springmvc.dto;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="pro")
+public class Product {
+	@Id
+	@Column
+	@GeneratedValue
+	private int oid;
+	@Column
+	private int pid;
+	@Column
+	private int vid;
+	
+	public int getOid() {
+		return oid;
+	}
+	public void setOid(int oid) {
+		this.oid = oid;
+	}
+	public int getPid() {
+		return pid;
+	}
+	public void setPid(int pid) {
+		this.pid = pid;
+	}
+	public int getVid() {
+		return vid;
+	}
+	public void setVid(int vid) {
+		this.vid = vid;
+	}
+	
+	
+	
+}

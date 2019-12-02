@@ -18,7 +18,7 @@ public class ProductDaoImpl implements ProductDAO {
 
 	@Override
 	public ProductBean login(int id, String password) {
-		String jpql = "from ProductBean where id=:id and password=:password";
+		String jpql = "from Product where id=:id and password=:password";
 		EntityManager manager = factory.createEntityManager();
 		TypedQuery<ProductBean> query = manager.createQuery(jpql,ProductBean.class);
 		query.setParameter("id", id);

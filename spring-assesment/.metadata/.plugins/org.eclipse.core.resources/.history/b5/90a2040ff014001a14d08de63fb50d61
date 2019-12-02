@@ -1,0 +1,22 @@
+package com.ustglobal.springmvc.dto;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Order")
+public class OrderBean {
+		@Id
+		@Column
+		@GeneratedValue
+		private int orderid;
+		@Column
+		private int quantity;
+		@Column
+		private int price;
+		
+		}
+
