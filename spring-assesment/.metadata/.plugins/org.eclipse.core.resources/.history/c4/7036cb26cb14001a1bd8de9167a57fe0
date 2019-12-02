@@ -1,0 +1,8 @@
+package com.ustglobal.springmvc.dao;
+
+import com.ustglobalspringmvc.dto.ProductBean;
+
+public class ProductDaoImpl implements ProductDAO {
+
+	
+}

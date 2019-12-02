@@ -1,0 +1,5 @@
+package com.ustglobal.springmvc.service;
+
+public class ProductServiceImpl {
+
+}

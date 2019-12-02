@@ -1,0 +1,5 @@
+package com.ustglobalspringmvc.beans;
+
+public class Productbean {
+
+}

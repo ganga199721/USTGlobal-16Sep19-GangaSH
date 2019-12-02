@@ -1,0 +1,31 @@
+package com.ustglobal.springmvc.dao;
+
+import com.ustglobalspringmvc.beans.ProductBean;
+
+public class ProductDaoImpl implements ProductDAO {
+
+	@Override
+	public ProductBean login(int id, String password) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ProductBean searchProduct(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ProductBean updateProduct(ProductBean bean) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ProductBean retrieve(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

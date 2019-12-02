@@ -1,0 +1,12 @@
+package com.ustglobal.springmvc.service;
+
+import com.ustglobalspringmvc.dto.ProductBean;
+
+public interface ProductService {
+	
+	public ProductBean login(int id, String password);
+	public ProductBean searchProduct(int id);
+	public boolean updateProduct(ProductBean bean);
+	public boolean retrieve(int id);
+
+}

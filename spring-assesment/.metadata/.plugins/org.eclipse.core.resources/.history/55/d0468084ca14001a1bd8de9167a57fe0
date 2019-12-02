@@ -1,0 +1,11 @@
+package com.ustglobal.springmvc.dao;
+
+import com.ustglobalspringmvc.dto.ProductBean;
+
+public interface ProductDAO {
+	public ProductBean login(int id, String password);
+	public ProductBean searchProduct(int id);
+	public ProductBean updateProduct(ProductBean bean);
+	public ProductBean retrieve(int id);
+	
+}
