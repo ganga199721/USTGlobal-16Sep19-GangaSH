@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectWizardLocationPage">
+		<list key="location">
+			<item value="F:\ganga-springs\springmvc"/>
+			<item value="F:\ganga-springs\spring"/>
+			<item value="F:\ganga-springs\empspringmvc"/>
+			<item value="F:\ganga-springs\didemo\src\com\ustglobal\didemo\MainClass.java"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArchetypePage">
+		<item key="catalog" value="All Catalogs"/>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="Maven2ProjectWizardArchifactPage">
+		<list key="package">
+			<item value="com.ustglobal.springrest"/>
+			<item value="com.ustglobal.ganga"/>
+			<item value="com.ustglobal.ust"/>
+			<item value="com.ustglobal.springmv"/>
+			<item value="com.ustglobal.spring"/>
+			<item value="com.ustglobal"/>
+			<item value="com.ustglobal.empspringmvc2"/>
+			<item value="com.ustglobal.empspringmvc1"/>
+			<item value="com.ustglobal.empspringmvc"/>
+			<item value="com.ustglobal.springmvc1"/>
+			<item value="com.ustglobal.springmvc"/>
+			<item value="com.ustglobal.springcore"/>
+		</list>
+		<list key="groupId">
+			<item value="com.ustglobal"/>
+		</list>
+		<list key="artifactId">
+			<item value="springrest"/>
+			<item value="ganga"/>
+			<item value="ust"/>
+			<item value="springmv"/>
+			<item value="spring"/>
+			<item value="empspringmvc2"/>
+			<item value="empspringmvc1"/>
+			<item value="empspringmvc"/>
+			<item value="springmvc1"/>
+			<item value="springmvc"/>
+			<item value="springcore"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArtifactPage">
+		<list key="groupId">
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="F:\ganga-springs\springboot\src\main\java\com\ustglobal\springboot\service\EmployeeServiceImpl.java"/>
+			<item value="F:\ganga-springs\springrest1"/>
+			<item value="F:\springrest1"/>
+			<item value="F:\ganga-springs\springrest"/>
+			<item value="F:\ganga-springs\spring_rest"/>
+			<item value="F:\ganga-springs\springboot"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+</section>

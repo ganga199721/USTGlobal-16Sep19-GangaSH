@@ -1,0 +1,16 @@
+127.0.0.1 - - [07/Dec/2019:15:17:02 +0530] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [07/Dec/2019:15:17:36 +0530] "GET /springmvc2/login HTTP/1.1" 404 1094
+0:0:0:0:0:0:0:1 - - [07/Dec/2019:15:17:36 +0530] "GET /favicon.ico HTTP/1.1" 404 1085
+0:0:0:0:0:0:0:1 - - [07/Dec/2019:15:17:53 +0530] "GET /empspringmvc2/login HTTP/1.1" 200 577
+0:0:0:0:0:0:0:1 - - [07/Dec/2019:15:17:58 +0530] "GET /empspringmvc2/register HTTP/1.1" 200 910
+0:0:0:0:0:0:0:1 - - [07/Dec/2019:15:18:43 +0530] "POST /empspringmvc2/register HTTP/1.1" 200 607
+0:0:0:0:0:0:0:1 - - [07/Dec/2019:15:19:05 +0530] "POST /empspringmvc2/login HTTP/1.1" 200 596
+0:0:0:0:0:0:0:1 - - [07/Dec/2019:15:19:10 +0530] "GET /empspringmvc2/register HTTP/1.1" 200 910
+0:0:0:0:0:0:0:1 - - [07/Dec/2019:15:19:59 +0530] "POST /empspringmvc2/register HTTP/1.1" 200 608
+0:0:0:0:0:0:0:1 - - [07/Dec/2019:15:20:08 +0530] "POST /empspringmvc2/login HTTP/1.1" 200 601
+0:0:0:0:0:0:0:1 - - [07/Dec/2019:15:20:14 +0530] "GET /empspringmvc2/changepassword HTTP/1.1" 200 617
+0:0:0:0:0:0:0:1 - - [07/Dec/2019:15:20:16 +0530] "GET /empspringmvc2/home HTTP/1.1" 200 601
+0:0:0:0:0:0:0:1 - - [07/Dec/2019:15:20:19 +0530] "GET /empspringmvc2/update HTTP/1.1" 200 642
+0:0:0:0:0:0:0:1 - - [07/Dec/2019:15:20:22 +0530] "GET /empspringmvc2/home HTTP/1.1" 200 601
+0:0:0:0:0:0:0:1 - - [07/Dec/2019:15:20:23 +0530] "GET /empspringmvc2/delete HTTP/1.1" 200 577
+0:0:0:0:0:0:0:1 - - [07/Dec/2019:15:20:28 +0530] "GET /empspringmvc2/register HTTP/1.1" 200 910

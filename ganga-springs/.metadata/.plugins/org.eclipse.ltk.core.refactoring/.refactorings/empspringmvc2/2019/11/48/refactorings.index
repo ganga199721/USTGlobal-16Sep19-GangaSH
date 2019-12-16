@@ -1,0 +1,20 @@
+1575001861285	Delete element
+1575002365718	Copy file
+1575004216379	Delete element
+1575004881812	Delete element
+1575004885800	Delete element
+1575006022413	Delete element
+1575008863615	Delete element
+1575008983260	Copy folder
+1575015489650	Rename package 'com.ustglobal.empspring.controller'
+1575015654270	Rename package 'com.ustglobal.empspringmvc.config'
+1575015671487	Rename package 'com.ustglobal.empspringmvc.service'
+1575015680996	Rename package 'com.ustglobal.empspringmvc.dto'
+1575015691667	Rename package 'com.ustglobal.empspringmvc.dao'
+1575015703752	Rename package 'com.ustglobal.empspringmvc.controller'
+1575017112294	Move 'view' to 'WEB-INF'
+1575020657893	Rename resource 'persistance.xml'
+1575026750633	Delete element
+1575026807921	Delete element
+1575028490510	Rename resource 'updatepassword.jsp'
+1575030851430	Rename resource 'updateprofile.jsp'
