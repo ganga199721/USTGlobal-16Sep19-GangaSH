@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-md-offset-4 offset-4">
+            <h1 class="text-center">Login</h1>
+            <div class="account-wall">
+                <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"alt="">
+                    <form class="col-md-12 " #form="ngForm"  (ngSubmit)="login(form)">
+                        <div class="form-group">
+                            <input type="email" name="email" id="email" class="form-control" placeholder="Enter email.." #email="ngModel" ngModel required maxlength="25" title="maximum length 25 characters" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                            <div *ngIf="email.touched && email.invalid">
+                                <p *ngIf="email.errors.required" class="alert alert-danger"> *email is required maxlength is 20</p>
+                            </div>
+                            <div *ngIf="email.touched && email.invalid">
+                                <p *ngIf="email.errors.pattern" class="alert alert-danger"> *Invalid .please include @ . in the email</p>
+                            </div>
+                        </div>
+                        
+                     
+                        <div class="form-group">
+                            <input type="password" name="password" id="password" class="form-control" placeholder="Enter password ..." #password="ngModel" ngModel required >
+                            <div *ngIf="password.touched && password.invalid">
+                                <p *ngIf="password.errors.required" class="alert alert-danger"> *passwordis required</p>
+                            </div>
+                           
+                        </div>
+                       
+                            <button type="submit" class="btn btn-lg btn-primary btn-block " [disabled]="form.invalid">Login</button>
+                       
+            
+               
+                </form>
+            </div>
+            <a routerLink="/register" class="text-center new-account">Create an account </a>
+            <a routerLink="/changepassword" class="text-center new-account">Forgot password </a>
+        </div>
+    </div>
+</div>

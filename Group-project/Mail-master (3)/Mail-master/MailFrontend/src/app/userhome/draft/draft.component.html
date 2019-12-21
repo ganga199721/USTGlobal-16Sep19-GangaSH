@@ -1,0 +1,147 @@
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<div class="container-fluid">
+<div class="row">
+    <div class="col-3 col-sm-2 col-md-2 col-lg-1 col-xl-1">
+        <nav class="nav navbar-light navbar-toggleable-sm">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarWEX" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse flex-column mt-md-0 mt-4 pt-md-0 pt-4" id="navbarWEX">
+                <a routerLink="/compose" class="nav-link"> <button type="submit" class="btn btn-lg btn-warning btn-block "><span class="glyphicon glyphicon-plus"></span>COMPOSE</button> </a>
+                <a routerLink="/inbox" class="nav-link">   <button type="submit" class="btn btn-lg btn-info btn-block "><span class="glyphicon glyphicon-envelope"></span>INBOX</button> </a>
+                <a href="/sent" class="nav-link"> <button type="submit" class="btn btn-lg btn-info btn-block "><span class="glyphicon glyphicon-send"></span>SENT</button> </a>
+                <a href="/trash" class="nav-link"> <button type="submit" class="btn btn-lg btn-danger btn-block "><span class="glyphicon glyphicon-trash"></span>TRASH</button> </a>
+                <a href="/draft" class="nav-link"> <button type="submit" class="btn btn-lg btn-danger btn-block "><span class="glyphicon glyphicon-trash"></span>DRAFT</button> </a>
+                <a href="/" class="nav-link"> <button type="submit" class="btn btn-lg btn-success btn-block "><span class="glyphicon glyphicon-off"></span>LOGOUT</button> </a>
+            </div>
+        </nav>
+    </div>
+    <div class="offset-1 float-right col-md-6">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="container">
+<div class="alert alert-success"*ngIf='msg'>{{msg}}</div>
+<div class="row col-md-12  offset-2 custyle">
+        <h2 class="offset-3 mb-5"><mark>DRAFT</mark></h2>
+        <div *ngIf='productDetails'>
+               
+<table class="table table-striped custab">
+
+
+        <tr *ngFor='let product of  productDetails' >
+            <td>{{product.id}}</td>
+            <td>{{product.name}}</td>
+
+            <td>
+                    <button  class="btn btn-success btn-xs "  (click)="confirm(product)" data-toggle="modal" data-target="#updateProduct"><span class="fa fa-edit"></span> Edit</button>                 
+                    <button  class="btn btn-danger btn-xs ml-2"  (click)="confirm(product)" data-toggle="modal" data-target="#deleteBook"><span class="fa fa-trash"></span> Delete </button>                 
+                    <button type="button" class="btn btn-info" data-dismiss="modal" (click)="addToCart(product)"><i class="fa fa-cart-plus">Add to cart</i></button>       
+            </td>
+        
+        </tr> 
+</table>
+</div>
+
+</div>
+
+</div>
+
+<div id="deleteBook" class="modal fade">
+<div class="modal-dialog modal-confirm">
+    <div class="modal-content">
+        <div class="modal-header">
+                           
+            <h4 class="modal-title">Are you sure?</h4>	
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        </div>
+        <div class="modal-body" *ngIf="selectedProduct">
+            <p>The product will be delete permanently</p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-info" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="deleteProduct(selectedProduct)">Delete</button>
+           
+        </div>
+    </div>
+</div>
+</div>   
+
+<div class="modal fade" id="updateProduct" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Draft</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body" *ngIf="selectedProduct">
+        <form action="" class="col-md-12  card card-body" #form="ngForm"  (ngSubmit)="updateProduct(form)">
+           
+            <input type="hidden" name="id" #id="ngModel" ngModel [(ngModel)]="selectedProduct.id">
+            <div class="form-group">
+                <input type="text" name="name" id="name" class="form-control" placeholder="Enter Product name..." #name="ngModel" ngModel  [(ngModel)]="selectedProduct.name" required maxlength="25" title="maximum length 25 characters" pattern="([A-Za-z\s]+){3,}">
+                <div *ngIf="name.touched && name.invalid">
+                    <p *ngIf="name.errors.required" class="alert alert-danger"> *product name is required maxlength is 20</p>
+                </div>
+                <div *ngIf="name.touched && name.invalid">
+                    <p *ngIf="name.errors.pattern" class="alert alert-danger"> *enter only characters min 3 and max 25</p>
+                </div>
+            </div>
+        
+            <div class="form-group">
+                <input type="text" name="catagory" id="catagory" class="form-control" [(ngModel)]="selectedProduct.catagory" placeholder="Enter product catagory..." #catagory="ngModel" ngModel required maxlength="25" title="maximum length 25 characters" pattern="([A-Za-z\s]+){3,}">
+                <div *ngIf="catagory.touched && catagory.invalid">
+                    <p *ngIf="catagory.errors.required" class="alert alert-danger"> *Product catagory is required maxlength is 20</p>
+                </div>
+                <div *ngIf="catagory.touched && catagory.invalid">
+                    <p *ngIf="catagory.errors.pattern" class="alert alert-danger"> *enter only characters min 3 and max 25</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="text" name="company" id="company" class="form-control" [(ngModel)]="selectedProduct.company" placeholder="Enter company.." #company="ngModel" ngModel required maxlength="25" title="maximum length 25 characters" pattern="([A-Za-z\s]+){3,}">
+                <div *ngIf="company.touched && company.invalid">
+                    <p *ngIf="company.errors.required" class="alert alert-danger"> *Product company is required maxlength is 20</p>
+                </div>
+                <div *ngIf="company.touched && company.invalid">
+                    <p *ngIf="company.errors.pattern" class="alert alert-danger"> *enter only characters min 3 and max 25</p>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <input type="text" name="quantity" id="quantity" class="form-control" [(ngModel)]="selectedProduct.quantity" placeholder="Enter Product quantity..." #quantity="ngModel" ngModel required  pattern="^[1-9][0-9]?$|^100$" title="please enter between 1-100">
+                <div *ngIf="quantity.touched && quantity.invalid">
+                    <p *ngIf="quantity.errors.required" class="alert alert-danger"> *Product quantity required</p>
+                </div>
+                <div *ngIf="quantity.touched && quantity.invalid">
+                    <p *ngIf="quantity.errors.pattern" class="alert alert-danger"> *please enter between 1-100</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="text" name="price" id="price" class="form-control" [(ngModel)]="selectedProduct.price" placeholder="Enter Product price..." #price="ngModel" ngModel required  pattern="" title="please enter between 1-100">
+                <div *ngIf="price.touched && price.invalid">
+                    <p *ngIf="price.errors.required" class="alert alert-danger"> *Product price required</p>
+                </div>
+                <div *ngIf="price.touched && price.invalid">
+                    <p *ngIf="price.errors.pattern" class="alert alert-danger"> *please enter between 1-100</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-outline-success float-right" [disabled]="form.invalid">update Product</button>
+            </div>
+            </form>
+    </div>
+    
+  </div>
+</div>
+</div>
+
+
+
+
+
+    </div>
+</div>
+</div>
