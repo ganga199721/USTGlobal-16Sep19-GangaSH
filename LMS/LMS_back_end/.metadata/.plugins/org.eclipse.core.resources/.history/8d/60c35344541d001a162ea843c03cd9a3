@@ -1,0 +1,7 @@
+package com.ustglobal.lms.service;
+
+import com.ustglobal.lms.dto.Book;
+
+public interface LibrarianService {
+	public boolean addbook(Book bean);
+}

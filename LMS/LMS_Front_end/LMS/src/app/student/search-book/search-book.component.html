@@ -1,0 +1,34 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- The form -->
+<form class="example mt-5 ml-5"  #form="ngForm" (ngSubmit)="getData(form)"   >
+  <input type="text" name="bname" id="bname" placeholder="Enter Book name" #bname="ngModel" ngModel>
+  <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+<div class="alert alert-success col-md-4 mt-5" *ngIf='msg'>{{msg}}</div>
+<table>
+    <div class="container" *ngIf="bookdetails">
+        <h2>Book details</h2>
+                  
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Book Id</th>
+              <th>Book Name</th>
+              <th>Author</th>
+              <th>Edition</th>
+              <th>Volume</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor='let user of bookdetails'>
+              <td>{{bookdetails[0].bid}}</td>
+              <td>{{bookdetails[0].bname}}</td>
+              <td>{{bookdetails[0].author}}</td>
+              <td>{{bookdetails[0].edition}}</td>
+              <td>{{bookdetails[0].volume}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+</table>

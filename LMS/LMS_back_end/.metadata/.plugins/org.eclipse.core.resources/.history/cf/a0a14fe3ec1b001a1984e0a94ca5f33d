@@ -1,0 +1,12 @@
+package com.ustglobal.lms.dao;
+
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.PersistenceUnit;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class UserDAOImpl {
+	@PersistenceUnit
+	private EntityManagerFactory factory;
+}

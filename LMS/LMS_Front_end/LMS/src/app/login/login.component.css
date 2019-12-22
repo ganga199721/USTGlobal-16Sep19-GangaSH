@@ -1,0 +1,6 @@
+.slider{
+    -webkit-box-shadow: 3px 23px 28px -14px rgba(0,0,0,0.75);
+-moz-box-shadow: 3px 23px 28px -14px rgba(0,0,0,0.75);
+box-shadow: 3px 23px 28px -14px rgba(0,0,0,0.75);
+}
+ 

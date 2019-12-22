@@ -1,0 +1,15 @@
+package com.ustglobal.lms.service;
+
+import java.util.List;
+
+import com.ustglobal.lms.dto.Book;
+import com.ustglobal.lms.dto.TrackBook;
+import com.ustglobal.lms.dto.Users;
+
+public interface LibrarianService {
+	public boolean addBook(Book bean);
+	public List<Book> viewBookRequest();
+	public List<Users> viewStudentRequest();
+	public List<TrackBook> viewTraceBook();
+	public boolean issueBook(TrackBook bean);
+}

@@ -1,0 +1,66 @@
+package com.ustglobal.lms.dao;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.PersistenceUnit;
+import javax.persistence.Query;
+import javax.persistence.TypedQuery;
+
+import org.springframework.stereotype.Repository;
+
+import com.ustglobal.lms.dto.Book;
+import com.ustglobal.lms.dto.TrackBook;
+import com.ustglobal.lms.dto.Users;
+
+@Repository
+public class StudentDAOImpl implements StudentDAO{
+	@PersistenceUnit
+	private EntityManagerFactory factory;
+
+
+
+	@Override
+	public boolean requestBook(TrackBook bean) {
+		EntityManager manager = factory.createEntityManager();
+		EntityTransaction transaction = manager.getTransaction();
+		try {
+			transaction.begin();
+			manager.persist(bean);
+			transaction.commit();
+			return true;
+		}catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+
+	}
+	/**************view all Book *********/
+
+	@Override
+	public List<Book> viewAllBook() {
+		
+		String jpql1 = "FROM TrackBook";
+		String jpql = "SELECT b FROM Book b WHERE b.bid not in(bid:bid)";
+		EntityManager manager = factory.createEntityManager();
+		Query q = manager.createNamedQuery("Book.findAll");
+		TrackBook tbook = new TrackBook();
+		//Query query = manager.createQuery(jpql);
+		TypedQuery<TrackBook> query1 = manager.createQuery(jpql1,TrackBook.class);
+		TypedQuery<Book> query = manager.createQuery(jpql,Book.class);//to avoid downcasting
+		try {
+			List<TrackBook> trackBooks = query1.getResultList();
+			List<Book> bean = query.getResultList();
+			for (TrackBook book : trackBooks) {
+				
+			}
+			return bean;
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+}

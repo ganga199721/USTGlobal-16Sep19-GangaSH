@@ -1,0 +1,3 @@
+INDEX VERSION 1.131
+F:\UST_TRAINING\LMS\LMS_back_end\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3431016731.index
+\lms\src\main\resources

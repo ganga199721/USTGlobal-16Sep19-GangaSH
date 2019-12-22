@@ -1,0 +1,211 @@
+package com.ustglobal.lms.controller;
+
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.Date;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.ustglobal.lms.dto.AdminResponse;
+import com.ustglobal.lms.dto.Book;
+import com.ustglobal.lms.dto.TrackBook;
+import com.ustglobal.lms.dto.Users;
+import com.ustglobal.lms.service.AdminService;
+import com.ustglobal.lms.service.LibrarianService;
+
+@CrossOrigin(origins = "*" , allowedHeaders = "*",allowCredentials = "true")
+@RestController
+public class LibrarianController {
+
+	@InitBinder
+	public void initBinder(WebDataBinder binder) {
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		CustomDateEditor editor = new CustomDateEditor(format, true);
+		binder.registerCustomEditor(Date.class, editor);
+	}
+
+	@Autowired
+	private LibrarianService service;
+
+	@PostMapping(path="/add-book" , consumes = MediaType.APPLICATION_JSON_VALUE,
+			produces = MediaType.APPLICATION_JSON_VALUE)
+	public AdminResponse addBook(@RequestBody Book bean) {
+		AdminResponse response = new AdminResponse();
+		if(service.addBook(bean)) {
+			response.setStatusCode(201);
+			response.setMessage("success");
+			response.setDescription("Book Added");
+		}
+		else {
+			response.setStatusCode(401);
+			response.setMessage("Failure");
+			response.setDescription("Data Not added to db");
+		}
+		return response;
+	}
+	/************View Book request************/
+	@GetMapping(path="/view-requested-book", produces = MediaType.APPLICATION_JSON_VALUE)
+	public AdminResponse viewBookRequest() {//sending entire responce not logical view
+		AdminResponse response = new AdminResponse();
+		List<Book> beans = service.viewBookRequest();
+		if(!beans.isEmpty()) {
+			response.setStatusCode(201);
+			response.setMessage("success");
+			response.setDescription("ALL Books Found");
+			response.setBook(beans);
+			
+		}
+		else {
+			response.setStatusCode(401);//if successfully added then success status code
+			response.setMessage("Failure");
+			response.setDescription("No requests found");
+
+		}
+		return response;
+	}
+	/************View students who requested book************/
+	@GetMapping(path="/view-requested-student", produces = MediaType.APPLICATION_JSON_VALUE)
+	public AdminResponse viewStduentRequest() {//sending entire responce not logical view
+		AdminResponse response = new AdminResponse();
+		List<Users> beans = service.viewStudentRequest();
+		if(!beans.isEmpty()) {
+			response.setStatusCode(201);
+			response.setMessage("success");
+			response.setDescription("ALL Books Found");
+			response.setUser(beans);
+		}
+		else {
+			response.setStatusCode(401);//if successfully added then success status code
+			response.setMessage("Failure");
+			response.setDescription("Data Not found");
+
+		}
+		return response;
+	}
+	@GetMapping(path="/view-TraceBook", produces = MediaType.APPLICATION_JSON_VALUE)
+	public AdminResponse viewTarcebook() {//sending entire responce not logical view
+		AdminResponse response = new AdminResponse();
+		List<TrackBook> beans = service.viewTraceBook();
+		if(!beans.isEmpty()) {
+			response.setStatusCode(201);
+			response.setMessage("success");
+			response.setDescription("ALL Books Found");
+			response.setTrackBooks(beans);;
+		}
+		else {
+			response.setStatusCode(401);//if successfully added then success status code
+			response.setMessage("Failure");
+			response.setDescription("Data Not found");
+
+		}
+		return response;
+	}
+
+	@GetMapping(path="/issue-book/{bid}/{status}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public AdminResponse issueBook(@PathVariable("bid")int bid , 
+			@PathVariable("status") int status) {//sending entire responce not logical view
+		AdminResponse response = new AdminResponse();
+		TrackBook bean = new TrackBook();
+		//		bean.setBid(bid);
+		//		bean.setStatus(status);
+		if(service.issueBook(bid,status)) {
+			response.setStatusCode(201);//ifsuccessfully added then success status code
+			response.setMessage("success");
+			response.setDescription("Book issued");
+		}
+		else {
+			response.setStatusCode(401);//if successfully added then success status code
+			response.setMessage("Failure");
+			response.setDescription("Data Not added to db");
+		}
+		return response;
+	}
+	@GetMapping(path="/decline-book/{bid}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public AdminResponse declineBook(@PathVariable("bid")int bid ) {//sending entire responce not logical view
+		AdminResponse response = new AdminResponse();
+		TrackBook bean = new TrackBook();
+		//		bean.setBid(bid);
+		//		bean.setStatus(status);
+		if(service.declineBook(bid)) {
+			response.setStatusCode(201);//ifsuccessfully added then success status code
+			response.setMessage("success");
+			response.setDescription("Book Not issued");
+		}
+		else {
+			response.setStatusCode(401);//if successfully added then success status code
+			response.setMessage("Failure");
+			response.setDescription("Data Not added to db");
+		}
+		return response;
+	}
+	/********* delete book *************/
+	@GetMapping(path="/delete-book/{bid}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public AdminResponse deleteBook(@PathVariable("bid")int bid ) {//sending entire responce not logical view
+		AdminResponse response = new AdminResponse();
+		TrackBook bean = new TrackBook();
+		//		bean.setBid(bid);
+		//		bean.setStatus(status);
+		if(service.deleteBook(bid)) {
+			response.setStatusCode(201);//ifsuccessfully added then success status code
+			response.setMessage("success");
+			response.setDescription("Book deleted");
+		}
+		else {
+			response.setStatusCode(401);//if successfully added then success status code
+			response.setMessage("Failure");
+			response.setDescription("No books deleted");
+		}
+		return response;
+	}
+	/***********view all books***************/
+	
+	@GetMapping(path="/view-books", produces = MediaType.APPLICATION_JSON_VALUE)
+	public AdminResponse viewAllBooks() {//sending entire responce not logical view
+		AdminResponse response = new AdminResponse();
+		List<Book> beans = service.viewAllBooks();
+		if(!beans.isEmpty()) {
+			response.setStatusCode(201);
+			response.setMessage("success");
+			response.setDescription("ALL Books Found");
+			response.setBook(beans);
+		}
+		else {
+			response.setStatusCode(401);//if successfully added then success status code
+			response.setMessage("Failure");
+			response.setDescription("Data Not found");
+
+		}
+		return response;
+	}
+	
+	/********************Edit Books***************/
+	@PutMapping(path="/update-book" , consumes = MediaType.APPLICATION_JSON_VALUE,
+			produces = MediaType.APPLICATION_JSON_VALUE)
+	public AdminResponse modifyBook(@RequestBody Book bean) {
+		AdminResponse response = new AdminResponse();
+		if(service.updateBook(bean)) {
+			response.setStatusCode(201);//if successfully added then success status code
+			response.setMessage("success");
+			response.setDescription("Data Modified");
+		}else
+		{
+			response.setStatusCode(401);//if successfully added then success status code
+			response.setMessage("Failure");
+			response.setDescription("Data Not modified");
+		}
+		return response;
+	}
+}

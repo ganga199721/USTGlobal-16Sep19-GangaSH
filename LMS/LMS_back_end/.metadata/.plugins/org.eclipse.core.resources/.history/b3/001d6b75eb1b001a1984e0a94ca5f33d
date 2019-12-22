@@ -1,0 +1,14 @@
+package com.ustglobal.lms.dto;
+
+import javax.persistence.Column;
+import javax.persistence.Id;
+
+public class Users {
+	@Id
+	@Column
+	private int admin_id;
+	@Column
+	private String admin_name;
+	@Column
+	private String admin_password;
+}

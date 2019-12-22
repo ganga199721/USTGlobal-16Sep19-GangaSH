@@ -1,0 +1,57 @@
+
+<div class="alert alert-success mt-5" *ngIf='msg' >{{msg}}</div>
+<form action="" class="col-md-4 offset-4 mt-5 mb-5 card card-body" #form="ngForm"  (ngSubmit)="addUser(form)">
+    <h1 class="text-center bg-dark text-white">Add User Details</h1>
+    
+    <div class="form-group">
+        <input type="text" name="user_name" id="user_name" class="form-control" placeholder="Enter user name..." #user_name="ngModel" ngModel required maxlength="25" 
+        title="maximum length 25 characters" pattern="[A-Za-z]{3,}">
+        <div *ngIf="user_name.touched && user_name.invalid">
+            <p *ngIf="user_name.errors.required" class="alert alert-danger"> *use name is required</p>
+        </div>
+        <div *ngIf="user_name.touched && user_name.invalid">
+            <p *ngIf="user_name.errors.pattern" class="alert alert-danger"> *enter only characters min 3 and max 25</p>
+        </div>
+    </div>
+    
+    
+    <select name="userType" #userType="ngModel" ngModel  class="custom-select custom-select-md mb-3" required>
+        <option value="" selected disabled>User type</option>
+        <option value="1">Admin</option>
+        <option value="2">Librarian</option>
+        <option value="3">Student</option>
+      </select>
+      <div *ngIf="userType.touched && userType.invalid">
+        <p *ngIf="userType.errors.required" class="alert alert-danger"> *userType is Name is required</p>
+    </div>
+    
+
+    <div class="form-group">
+        <input type="user_password" name="user_password" id="user_password" class="form-control" placeholder="Enter password name..." #user_password="ngModel" ngModel required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+        <div *ngIf="user_password.touched && user_password.invalid">
+            <p *ngIf="user_password.errors.required" class="alert alert-danger"> *passwordis required</p>
+        </div>
+        <div *ngIf="user_password.touched && user_password.invalid">
+            <p *ngIf="user_password.errors.pattern" class="alert alert-danger"> *Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="cpassword" name="cpassword" id="cpassword" class="form-control" placeholder="Confirm password..." #cpassword="ngModel" ngModel required>
+        <div *ngIf="cpassword.touched && cpassword.invalid">
+            <p *ngIf="cpassword.errors.required" class="alert alert-danger"> *confirm is required</p>
+        </div>
+        <div *ngIf="cpassword.touched  && user_password.value != cpassword.value ">
+            <p *ngIf="cpassword.errors.required" class="alert alert-danger"> *password dosent match</p>
+        </div>
+    </div>
+
+  
+
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-outline-success float-right" [disabled]="form.invalid">Add User</button>
+    </div>
+    </form>
+
+
+

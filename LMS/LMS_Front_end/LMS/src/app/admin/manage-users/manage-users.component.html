@@ -1,0 +1,108 @@
+
+<div class="container">
+        <div class="row col-md-6 col-md-offset-2 offset-3 custyle mt-5">
+                <h1 class="offset-2"><mark>All users</mark></h1>
+               
+                <div *ngIf='userDetails' >
+        <table class="table table-striped custab">
+        <thead>
+      
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>User Type</th>
+                <th class="text-center">Action</th>
+            </tr>
+        </thead>
+                <tr *ngFor='let user of userDetails' >
+                    <td>{{user.user_id}}</td>
+                    <td>{{user.user_name}}</td>
+                    <td *ngIf='user.userType==1'>Admin</td>
+                    <td *ngIf='user.userType==2'>Librarian</td>
+                    <td *ngIf='user.userType==3'>Student</td>
+                    <td class="text-center">
+                        <button class='btn btn-info btn-xs mr-2' (click)="selectData(user)" data-toggle="modal" data-target="#updateuser" ><i class="fas fa-edit"></i> Edit</button>
+                                          <button class="btn btn-danger btn-xs"  (click)="deleteData(user)"><span class="fa fa-trash"></span> Delete</button>                 
+                    </td>
+                </tr> 
+        </table>
+    </div>
+    <div class="alert alert-success"*ngIf='msg'>{{msg}}</div>
+ </div>
+</div>
+ 
+
+<div id="myModal" class="modal fade">
+        <div class="modal-dialog modal-confirm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="icon-box">
+                        <i class="material-icons">&#xE5CD;</i>
+                    </div>				
+                    <h4 class="modal-title">Are you sure?</h4>	
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>Do you really want to delete these records? This process cannot be undone.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-info" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" >Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>   
+   
+<div class="modal fade" id="updateuser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" *ngIf="selectedUser">
+              <form action="" class="" #form="ngForm"  (ngSubmit)="updateUser(form)">
+                  <h1 class="text-center bg-dark text-white">Edit User</h1>
+                  <input type="hidden" name="user_id" #id="ngModel" ngModel [(ngModel)]="selectedUser.user_id">
+                  
+                  <div class="form-group">
+                        <input type="text" name="user_name" id="user_name" class="form-control" placeholder="Enter user name..." #user_name="ngModel" ngModel [(ngModel)]="selectedUser.user_name" required>
+                        <div *ngIf="user_name.touched && user_name.invalid">
+                            <p *ngIf="user_name.errors.required" class="alert alert-danger"> *use name is required</p>
+                        </div>
+                    </div>
+                    
+                    
+                    <select name="userType" #userType="ngModel" ngModel  class="custom-select custom-select-md mb-3" required >
+                        <option value="" selected disabled>Select user</option>
+                        <option value="1">Admin</option>
+                        <option value="2">Librarian</option>
+                        <option value="3">Student</option>
+                      </select>
+                      <div *ngIf="userType.touched && userType.invalid">
+                        <p *ngIf="userType.errors.required" class="alert alert-danger"> *userType is Name is required</p>
+                    </div>
+                    
+                
+                    <div class="form-group">
+                        <input type="user_password" name="user_password" id="user_password" class="form-control" placeholder="Enter password name..." #user_password="ngModel" ngModel  [(ngModel)]="selectedUser.user_password" required>
+                        <div *ngIf="user_password.touched && user_password.invalid">
+                            <p *ngIf="user_password.errors.required" class="alert alert-danger"> *passwordis required</p>
+                        </div>
+                         
+                    </div>
+                   
+                  <div class="form-group">
+                      <button type="submit" class="btn btn-outline-success float-right" [disabled]="form.invalid" >Update</button>
+                  </div>
+                  </form>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+        
+       
+    

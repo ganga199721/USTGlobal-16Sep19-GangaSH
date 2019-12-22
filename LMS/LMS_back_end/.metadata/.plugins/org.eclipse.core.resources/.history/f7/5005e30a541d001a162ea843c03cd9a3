@@ -1,0 +1,19 @@
+package com.ustglobal.lms.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ustglobal.lms.dao.AdminDAO;
+import com.ustglobal.lms.dto.Book;
+
+@Service
+public class LibrarianServiceImpl implements LibrarianService{
+	@Autowired
+	private AdminDAO dao;
+	@Override
+	public boolean addbook(Book bean) {
+		// TODO Auto-generated method stub
+		return dao.;
+	}
+
+}

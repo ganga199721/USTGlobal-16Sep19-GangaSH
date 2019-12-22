@@ -1,0 +1,66 @@
+package com.ustglobal.lms.controller;
+
+import java.security.Provider.Service;
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.ustglobal.lms.dto.Admin;
+import com.ustglobal.lms.dto.AdminResponse;
+import com.ustglobal.lms.dto.Users;
+import com.ustglobal.lms.service.AdminService;
+import com.ustglobal.lms.service.UserService;
+
+@CrossOrigin(origins = "*" , allowedHeaders = "*",allowCredentials = "true")
+@RestController
+public class UserController {
+
+	@Autowired
+	private UserService service;
+	private AdminService service1;
+
+	/**********************  Admin Login **********************/	
+	@GetMapping(path="/user-login/{user_id}/{user_password}" ,produces = MediaType.APPLICATION_JSON_VALUE)
+	public AdminResponse getUser(@PathVariable("user_id")int user_id,
+			@PathVariable("user_password")String user_password) {
+		AdminResponse response = new AdminResponse();
+		Users bean = service.userLogin(user_id, user_password);
+		if(bean!=null) {
+			response.setStatusCode(201);
+			response.setMessage("success");
+			response.setDescription("Data Found");
+			response.setUser(Arrays.asList(bean));
+		}
+		else {
+			response.setStatusCode(201);
+			response.setMessage("Failed");
+			response.setDescription("Data Not Found ");
+		}
+		return response;
+	}
+	@GetMapping(path="/view-user/{userType}", consumes = MediaType.APPLICATION_JSON_VALUE,
+			produces = MediaType.APPLICATION_JSON_VALUE)
+	public AdminResponse viewStudent(@PathVariable("userType") int userType) {//sending entire responce not logical view
+		AdminResponse response = new AdminResponse();
+		List<Users> beans = service1.viewStudent(userType);
+		if(!beans.isEmpty()) {
+			response.setStatusCode(201);
+			response.setMessage("success");
+			response.setDescription("ALL Data Found");
+			response.setUser(beans);
+		}
+		else {
+			response.setStatusCode(401);//if successfully added then success status code
+			response.setMessage("Failure");
+			response.setDescription("Data Not found");
+
+		}
+		return response;
+	}
+}

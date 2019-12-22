@@ -1,0 +1,57 @@
+
+<div class="alert alert-success mt-5" *ngIf='msg' >{{msg}}</div>
+<form action="" class="col-md-4 offset-4 mt-5 mb-5 card card-body" #form="ngForm"  (ngSubmit)="addBook(form)">
+    <h1 class="text-center bg-white mb-5">Add Book Details</h1>
+    
+    <div class="form-group">
+        <input type="text" name="bname" id="bname" class="form-control" placeholder="Enter Book name..." #bname="ngModel" ngModel required maxlength="25" title="maximum length 25 characters" pattern="([A-Za-z\s]+){3,}">
+        <div *ngIf="bname.touched && bname.invalid">
+            <p *ngIf="bname.errors.required" class="alert alert-danger"> *Book name is required maxlength is 20</p>
+        </div>
+        <div *ngIf="bname.touched && bname.invalid">
+            <p *ngIf="bname.errors.pattern" class="alert alert-danger"> *enter only characters min 3 and max 25</p>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <input type="text" name="edition" id="edition" class="form-control" placeholder="Enter Book Edition..." #edition="ngModel" ngModel required  pattern="^[1-9][0-9]?$|^100$" title="please enter between 1-100">
+        <div *ngIf="edition.touched && edition.invalid">
+            <p *ngIf="edition.errors.required" class="alert alert-danger"> *Book edition required</p>
+        </div>
+        <div *ngIf="edition.touched && edition.invalid">
+            <p *ngIf="edition.errors.pattern" class="alert alert-danger"> *please enter between 1-100</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <input type="text" name="author" id="author" class="form-control" placeholder="Enter Author name..." #author="ngModel" ngModel required maxlength="25" pattern="([A-Za-z\s]+){3,}">
+        <div *ngIf="author.touched && author.invalid">
+            <p *ngIf="author.errors.required" class="alert alert-danger"> *Author name is required maxlength is 20</p>
+        </div>
+        <div *ngIf="author.touched && author.invalid">
+            <p *ngIf="author.errors.pattern" class="alert alert-danger"> *enter only characters min 3 and max 25</p>
+        </div>
+    </div>
+    
+    
+   
+    <div class="form-group">
+        <input type="text" name="volume" id="volume" class="form-control" placeholder="Enter Book volume..." #volume="ngModel" ngModel required  pattern="^[1-9][0-9]?$|^100$" title="please enter between 1-100">
+        <div *ngIf="volume.touched && volume.invalid">
+            <p *ngIf="volume.errors.required" class="alert alert-danger"> *Book volume required</p>
+        </div>
+        <div *ngIf="volume.touched && volume.invalid">
+            <p *ngIf="volume.errors.pattern" class="alert alert-danger"> *please enter between 1-100</p>
+        </div>
+    </div>
+
+  
+
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-outline-success float-right" [disabled]="form.invalid">Add Book</button>
+    </div>
+    </form>
+
+
+

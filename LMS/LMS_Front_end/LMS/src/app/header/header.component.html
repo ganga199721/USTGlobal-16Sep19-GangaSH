@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-secondary bg-secondary">
+    <a class="navbar-brand" href="#">Library management System</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+                                       <!-- ADMIN -->
+      <li class="nav-item active" *ngIf='isAdmin()'>
+         <a class="nav-link" routerLink="adminHome">DashBoard <span class="sr-only">(current)</span></a>
+        </li>                              
+        <li class="nav-item active" *ngIf='isAdmin()'>
+          <a class="nav-link" routerLink="/adduser">Add User <span class="sr-only">(current)</span></a>
+        </li>
+
+        <li class="nav-item dropdown  active" *ngIf='isAdmin()'>
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           View Users
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown" *ngIf='isAdmin()'>
+            <a class="dropdown-item" *ngIf='isAdmin()' routerLink="/viewstudent">viewstudent</a>
+            <a class="dropdown-item" *ngIf='isAdmin()' routerLink="/viewlibrarian">View Librarian</a>
+          </div>
+        </li>
+        <li class="nav-item active" *ngIf='isAdmin()'>
+            <a class="nav-link" routerLink="/manageusers">Manage Users<span class="sr-only">(current)</span></a>
+          </li>
+       
+<!-- Library -->
+      <li class="nav-item active" *ngIf=' isLibrary()'>
+          <a class="nav-link" routerLink="/library"></a>
+      </li>
+      <li class="nav-item active" *ngIf=' isLibrary()'>
+        <a class="nav-link" routerLink="/addbooks">Add Book</a>
+    </li>
+      <li class="nav-item active" *ngIf=' isLibrary()'>
+        <a class="nav-link" routerLink="/issuebook">Issue Books</a>
+    </li>
+    <li class="nav-item active" *ngIf=' isLibrary()'>
+      <a class="nav-link" routerLink="/managebook">Manage Books</a>
+  </li>
+
+                       <!-- STUDENT -->
+        <li class="nav-item active" *ngIf='isStudent()'>
+          <a class="nav-link" routerLink="/searchbook" >search Boks</a>
+      </li>
+      <li class="nav-item active" *ngIf='isStudent()'>
+        <a class="nav-link" routerLink="/viewbook">view book <span class="sr-only">(current)</span></a>
+      </li>
+      </ul>
+
+
+
+      <form class="form-inline my-2 my-lg-0" *ngIf='!isLoggedIn()'>
+        
+        <button class="btn btn-info my-2 my-sm-0" type="submit" routerLink='/'>Login</button>
+      </form>
+      <form class="form-inline my-2 my-lg-0" *ngIf='isLoggedIn()'>
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)='logout()'>Logout</button>
+      </form>
+    </div>
+  </nav>

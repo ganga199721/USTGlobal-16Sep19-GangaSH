@@ -1,0 +1,5 @@
+package com.ustglobal.lms.dao;
+
+public interface LibrarianDAO {
+	public boolean addbook(book bean);
+}
